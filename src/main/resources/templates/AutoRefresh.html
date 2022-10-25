@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="header :: common_header">
+<div class="container"><h2>Below Data will refresh after some intervals!</h2></div>
+<div class="container  col-md-8" id="orderTable">
+</div>
+    <script src="js/refresh.js"></script>
+<!--<script>
+$(document).ready(function() {
+    setInterval(function(){
+        showOrderTable();
+    }, 5000);
+});
+
+function showOrderTable(){
+    $("#orderTableData").remove()
+    url = "orderDetails";
+    htmlForTable '<table class="table table-striped" id="orderTableData">
+    <thead>
+        <tr>
+	        <th scope="col">Order Id</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</td>
+        </tr>
+    </thead>
+    <tbody>';
+    htmlForTableData = '';
+    $.get(url, function(responseJSON) {
+    $.each(responseJSON, function(index, order) {
+      htmlForTableData += '<tr> <td>' + order.orderId + '</td>  <td>' + order.customerName + '</td>  <td>' + order.productName + '</td>  <td>' + order.price + '</td></tr>';
+});
+}).done(function(){
+	htmlForTable = htmlForTable + htmlForTableData +  '</tbody></table>';
+	${"#orderTable"}.append(htmlForTable);
+}).fail(function(){
+alert("Error: could not connect to server or server encountered an error.")
+});
+}
+</script>-->
+</div>
+</body>
+
+</html>

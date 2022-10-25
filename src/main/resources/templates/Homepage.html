@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="score" th:replace="header :: common_header"></div>
+<div class="container col-md-8">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Order Id</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="order: ${orders}">
+                <td th:text="${order.orderId}"/></th>
+                <td th:text="${order.customerName}"/></th>
+                <td th:text="${order.productName}"/></th>
+                <td th:text="${order.price}"/></th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</body>
+</html>
